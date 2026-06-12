@@ -2,14 +2,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 :root{
     --color-primario: #ff6347;
     --fuente-titulo: 'lucida sans', sans-serif;
+    --color-clarito-primario:  #a3e0a5;
     --altura_header: 240px;
     --color-secundario: #4caf50;
     --color-texto: #fff;
+    --color-texto-secundario: black;
 }
 
 header{
@@ -19,7 +22,7 @@ header{
 }
 
 .degradado{
-    background: linear-gradient(to right, transparent, rgba(0,0,0,0.5));
+    background: linear-gradient(to right, var(--color-clarito-primario), var(--color-secundario));
 }
 
 .bienvenida{
@@ -80,11 +83,39 @@ header{
 
 main{
     min-height: calc(100dvh - var(--altura_header));
-    background-color: var(--color-secundario);
+    padding-top: 3em;
 }
 
 .categorias{
-    height: 100px;
-    background-color: white;
-    padding-top: 25px;
+    padding: 2em 0;
+    background-color: var(--color-texto);
+    display:flex;
+    gap: 2em;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.item-categoria{
+    flex: 0 0 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    padding: .5em;
+    transition:all .25s ease-out;
+    display: grid;
+    place-items: center;
+    color: var(--color-secundario);
+}
+
+.item-categoria .fa-solid{font-size: 2em;}
+
+.item-categoria:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    border-radius: 3em;
+    background-color: #fff;
+    box-shadow: 0 6px 26px -3px rgba(0,0,0,0.5);
+    color: var(--color-secundario);
 }
